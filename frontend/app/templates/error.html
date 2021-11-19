@@ -1,0 +1,16 @@
+<html>
+    <head>
+        <title>電子政府きふわらべ</title>
+    </head>
+    <body>
+        <img src="static/img/20211102shogi18.png" /><br />
+        何かエラーが起こったようだぜ（＾～＾）<br />
+        <span style="color: red">{{errorMessage}}</span><br />
+        <form method="POST" action="/back">
+            <input type="hidden" name="yourName" value="{{yourName}}" />
+            <!-- 平文（／＿＼） -->
+            <input type="hidden" name="secret" value="{{secret}}" />
+            <input type="submit" value="戻る" />
+        </form>
+    </body>
+</html>

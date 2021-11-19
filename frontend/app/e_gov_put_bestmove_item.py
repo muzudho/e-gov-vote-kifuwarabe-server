@@ -4,7 +4,6 @@ python.exe e_gov_put_bestmove_item.py
 
 import boto3
 
-
 def put_bestmove(your_name, secret, bestmove, dynamodb=None):
     if not dynamodb:
         dynamodb = boto3.resource(
@@ -20,3 +19,4 @@ def put_bestmove(your_name, secret, bestmove, dynamodb=None):
         }
     )
     return response
+    

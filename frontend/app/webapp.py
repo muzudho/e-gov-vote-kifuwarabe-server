@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template
 from e_gov_put_bestmove_item import put_bestmove
 from pprint import pprint
+from botocore.exceptions import ClientError
 
 app = Flask(__name__)
 
@@ -46,15 +47,23 @@ def thanks():
                         bestmove=m,
                         errorMessage='1文字以上入力してください')
     else:
-        # 投票します
-        response = put_bestmove(yourName, secret, m)
-        print("Put bestmove succeeded:")
-        pprint(response, sort_dicts=False)
+        try:
+            # 投票します
+            response = put_bestmove(yourName, secret, m)
+            print("Put bestmove succeeded:")
+            pprint(response, sort_dicts=False)
 
-        return render_template('thanks.html',
-                            yourName=yourName,
-                            secret=secret,
-                            bestmove=m)
+            return render_template('thanks.html',
+                                yourName=yourName,
+                                secret=secret,
+                                bestmove=m)
+        except Exception as e:
+            errorMessage = f"{e}"
+            print(f"Unexpected error: {errorMessage}")
+            return render_template('error.html',
+                                yourName=yourName,
+                                secret=secret,
+                                errorMessage=errorMessage)
 
 @app.route('/back', methods=['POST'])
 def back():
