@@ -20,7 +20,11 @@ RUN apt-get update && apt-get install -y \
 
 RUN pip install --upgrade pip
 RUN pip install --upgrade setuptools
-RUN pip install uwsgi flask
+RUN pip install \
+    uwsgi \
+    flask \
+    pprintpp \
+    boto3
 
 ENV FLASK_APP /app/webapp.py
 

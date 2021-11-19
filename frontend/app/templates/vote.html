@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>電子政府きふわらべ</title>
+    </head>
+    <body>
+        <img src="static/img/20211102shogi18.png" /><br />
+        {{yourName}} さんの次の一手を入力しろだぜ（＾ｑ＾）<br />
+        <span style="color: red">{{errorMessage}}</span><br />
+        <form method="POST" action="/thanks">
+            <input type="hidden" name="yourName" value="{{yourName}}" />
+            <!-- 平文（／＿＼） -->
+            <input type="hidden" name="secret" value="{{secret}}" />
+            <input
+                type="text"
+                name="bestmove"
+                maxlength="10"
+                value="{{bestmove}}"
+            />
+            <input type="submit" value="Vote!" />
+        </form>
+    </body>
+</html>
