@@ -1,0 +1,31 @@
+version: "3.8"
+services:
+  frontend:
+    build: ./frontend
+    # 起動しっぱなしにします。
+    tty: true
+    # 起動させ続ける Hack です。
+    command: bash -c "bash /usr/local/bin/docker-entrypoint.sh && /bin/bash"
+    ports:
+      - "3000:3000"
+    networks:
+      # この frontend を、 nginx から見れるようにします。
+      - flask_hello
+
+  nginx:
+    build: ./nginx
+    expose:
+      - 80
+    ports:
+      - "80:80"
+    depends_on:
+      # frontend のあとに nginx をビルドします。
+      - frontend
+    networks:
+      # この nginx から frontend が見えるようにします。
+      - flask_hello
+
+
+networks:
+  flask_hello:
+    driver: bridge

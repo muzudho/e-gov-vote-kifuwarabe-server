@@ -2,7 +2,17 @@
 
 電子政府きふわらべサーバー（＾～＾）
 
-## Practice
+📖 [AWSにデータベースサーバーってどうやって置くの（＾～＾）？](https://crieit.net/drafts/61890804402ea)  
+
+## Run
+
+```shell
+docker-compose up -d --build
+```
+
+[http://localhost/](http://localhost/)  
+
+## Previous practice
 
 このプロジェクトを作る前に練習したもの:  
 
