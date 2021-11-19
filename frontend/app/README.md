@@ -9,3 +9,4 @@
 ## Documents
 
 📖 [Flask installation](https://flask.palletsprojects.com/en/2.0.x/installation/)  
+📖 [DynamoDB Summary](https://docs.aws.amazon.com/ja_jp/amazondynamodb/latest/developerguide/GettingStarted.Python.Summary.html)  
