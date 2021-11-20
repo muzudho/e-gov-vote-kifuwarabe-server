@@ -12,6 +12,18 @@ docker-compose up -d --build
 
 [http://localhost/](http://localhost/)  
 
+## Enter docker container
+
+```shell
+docker exec -it e-gov-vote-kifuwarabe-server-frontend-1 bash
+```
+
+## Stop
+
+```shell
+docker-compose down
+```
+
 ## Previous practice
 
 このプロジェクトを作る前に練習したもの:  
