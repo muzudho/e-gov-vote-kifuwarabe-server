@@ -11,9 +11,9 @@ services:
     networks:
       # この frontend を、 nginx から見れるようにします。
       - flask_hello
-    # TODO クレデンシャルファイルをマウント
+    # クレデンシャルファイルをマウント。読取専用
     volumes:
-      - C:/Users/むずでょ/.aws/credentials:/home/app/.aws/credentials:ro
+      - C:/Users/むずでょ/.aws/credentials:/root/.aws/credentials:ro
 
   nginx:
     build: ./nginx
