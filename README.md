@@ -35,3 +35,8 @@ docker-compose down
 📖 [python-echo-server](https://github.com/muzudho/python-echo-server)  
 📖 [python-chat](https://github.com/muzudho/python-chat)  
 📖 [nginx-uwsgi-flask-hello-world](https://github.com/muzudho/nginx-uwsgi-flask-hello-world)  
+
+## Documents
+
+Visual Studio Code のエラーログの場所:  
+`C:\Users\むずでょ\AppData\Roaming\Code\logs`  

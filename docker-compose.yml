@@ -13,7 +13,10 @@ services:
       - flask_hello
     # クレデンシャルファイルをマウント。読取専用
     volumes:
+      # ↓外側のOSがWindowsなら
       - C:/Users/むずでょ/.aws/credentials:/root/.aws/credentials:ro
+      # ↓外側のOSがUbuntuなら
+      # - /home/ubuntu/.aws/credentials:/root/.aws/credentials:ro
 
   nginx:
     build: ./nginx
