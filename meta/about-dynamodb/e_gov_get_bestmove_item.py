@@ -1,5 +1,6 @@
 """
 (Python 3.9)
+cd meta/about-dynamodb
 python.exe e_gov_get_bestmove_item.py
 """
 
