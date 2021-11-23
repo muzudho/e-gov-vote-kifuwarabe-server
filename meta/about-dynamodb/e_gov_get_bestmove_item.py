@@ -1,4 +1,5 @@
 """
+(Python 3.9)
 python.exe e_gov_get_bestmove_item.py
 """
 
@@ -17,7 +18,8 @@ def get_bestmove(your_name, secret, dynamodb=None):
     table = dynamodb.Table('Bestmove')
 
     try:
-        response = table.get_item(Key={'yourName': your_name, 'secret': secret})
+        response = table.get_item(
+            Key={'yourName': your_name, 'secret': secret})
     except ClientError as e:
         print(e.response['Error']['Message'])
     else:
@@ -25,7 +27,7 @@ def get_bestmove(your_name, secret, dynamodb=None):
 
 
 if __name__ == '__main__':
-    movie = get_bestmove("Muzudho","abc1234")
+    movie = get_bestmove("Muzudho", "abc1234")
     if movie:
         print("Get bestmove table succeeded:")
         pprint(movie, sort_dicts=False)

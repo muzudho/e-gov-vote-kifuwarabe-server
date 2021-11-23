@@ -1,4 +1,5 @@
 """
+(Python 3.9)
 python.exe e_gov_put_bestmove_item.py
 """
 
